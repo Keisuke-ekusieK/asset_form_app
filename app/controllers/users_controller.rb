@@ -23,4 +23,16 @@ class UsersController < ApplicationController
   def new
 		@user = User.new
   end
+
+	def create
+		@user = User.new(user_params)
+		@user.avatar.attach(params[:user][:avatar])
+		if @user.save
+			log_in @user
+			flash[:success] = "アカウント情報を登録しました"
+			#redirect_to new_family_url 
+		else
+			render 'new'
+		end
+	end
 end
