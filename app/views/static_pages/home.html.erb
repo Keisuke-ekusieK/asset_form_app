@@ -3,10 +3,12 @@
 <% if logged_in? %>
 	<div class="row">
   	<aside class="col-md-4">
-    	<%= render 'users/user_main' %>
-    	<%= render 'monthly_expenses/monthly_expense_form' %>
-    	<%= render 'families/family_show' %>
-    	<%= render 'asset_allocations/asset_allocation_show' %>
+			<!-
+    		<%= render 'users/user_main' %>
+    		<%= render 'monthly_expenses/monthly_expense_form' %>
+    		<%= render 'families/family_show' %>
+    		<%= render 'asset_allocations/asset_allocation_show' %>
+			->
   	</aside>
 
   	<div class="col-md-8">
@@ -21,7 +23,7 @@
     			</div>
   			<% end %>
 			</p>
-      <%= render 'shared/feed' %>
+      <!- <%= render 'shared/feed' %> ->
   	</div>
 	</div>
 <% else %>
@@ -32,6 +34,6 @@
 			同じような家族構成の方の資産配分や月の支出を見て、自分の資産形成のヒントにしよう!
   	</h2>
 
-  	<%= link_to "今すぐサインアップ", signup_path, class: "btn btn-lg btn-primary" %>
+  	<!- <%= link_to "今すぐサインアップ", signup_path, class: "btn btn-lg btn-primary" %> ->
 	</div>
 <% end %>
