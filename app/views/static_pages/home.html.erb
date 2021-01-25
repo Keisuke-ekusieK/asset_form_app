@@ -1,2 +1,37 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, "ホーム") %>
+
+<% if logged_in? %>
+	<div class="row">
+  	<aside class="col-md-4">
+    	<%= render 'users/user_main' %>
+    	<%= render 'monthly_expenses/monthly_expense_form' %>
+    	<%= render 'families/family_show' %>
+    	<%= render 'asset_allocations/asset_allocation_show' %>
+  	</aside>
+
+  	<div class="col-md-8">
+      <h3>月の支出フィード</h3>
+			<p>
+  			<%= form_tag(root_path, method: :get) do %>
+    			<div class="input-group col-md-6">
+      			<%= search_field_tag "q", params[:q], class: "form-control", placeholder: "名前検索" %>
+      			<span class="input-group-btn">
+        			<%= submit_tag "検索", class: "btn btn-default" %>
+      			</span>
+    			</div>
+  			<% end %>
+			</p>
+      <%= render 'shared/feed' %>
+  	</div>
+	</div>
+<% else %>
+	<div class="center jumbotron">
+  	<h1>資産形成アプリへようこそ</h1>
+
+  	<h2>
+			同じような家族構成の方の資産配分や月の支出を見て、自分の資産形成のヒントにしよう!
+  	</h2>
+
+  	<%= link_to "今すぐサインアップ", signup_path, class: "btn btn-lg btn-primary" %>
+	</div>
+<% end %>
