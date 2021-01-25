@@ -31,6 +31,7 @@ class UsersController < ApplicationController
 			log_in @user
 			flash[:success] = "アカウント情報を登録しました"
 			#redirect_to new_family_url 
+			redirect_to @user
 		else
 			render 'new'
 		end
