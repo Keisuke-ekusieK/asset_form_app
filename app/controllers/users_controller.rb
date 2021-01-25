@@ -35,4 +35,23 @@ class UsersController < ApplicationController
 			render 'new'
 		end
 	end
+
+		private
+			def user_params
+      	params.require(:user).permit(:avatar, 
+																		 :name, 
+																		 :email,
+																		 :user_name,  
+																		 :password,
+                	                   :password_confirmation)
+    	end
+
+			def admin_user
+				redirect_to(root_url) unless current_user.admin?
+			end
+
+			def correct_user
+    		@user = User.find(params[:id])
+    		redirect_to(root_url) unless current_user?(@user)
+  		end
 end
