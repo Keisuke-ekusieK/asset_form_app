@@ -1,15 +1,13 @@
 <% provide(:title, "ホーム") %>
 
 
-<%= begin %> <% if logged_in? %> <%= end %>
+<%# if logged_in? %>
 	<div class="row">
   	<aside class="col-md-4">
-			<%= begin %>
-    		<%= render 'users/user_main' %>
-    		<%= render 'monthly_expenses/monthly_expense_form' %>
-    		<%= render 'families/family_show' %>
-    		<%= render 'asset_allocations/asset_allocation_show' %>
-			<%= end %>
+    	<%# render 'users/user_main' %>
+    	<%# render 'monthly_expenses/monthly_expense_form' %>
+    	<%# render 'families/family_show' %>
+    	<%# render 'asset_allocations/asset_allocation_show' %>
   	</aside>
 
   	<div class="col-md-8">
@@ -24,10 +22,10 @@
     			</div>
   			<% end %>
 			</p>
-      <%= begin %> <%= render 'shared/feed' %> <%= end %>
+      <%# render 'shared/feed' %>
   	</div>
 	</div>
-<%= begin %> <% else %> <%= end %>
+<%# else %>
 	<div class="center jumbotron">
   	<h1>資産形成アプリへようこそ</h1>
 
@@ -35,6 +33,6 @@
 			同じような家族構成の方の資産配分や月の支出を見て、自分の資産形成のヒントにしよう!
   	</h2>
 
-  	<%= begin %> <%= link_to "今すぐサインアップ", signup_path, class: "btn btn-lg btn-primary" %> <%= end %>
+  	<%# link_to "今すぐサインアップ", signup_path, class: "btn btn-lg btn-primary" %>
 	</div>
-<%= begin %> <% end %> <%= end %>
+<%# end %>
