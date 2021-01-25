@@ -1,0 +1,24 @@
+
+<%= form_with(model: @user, local: true) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+
+	<%= f.label :avatar, 'アイコン画像' %>
+  <%= f.file_field :avatar, accept: "image/jpeg,image/gif,image/png" %>
+
+  <%= f.label :name, 'ニックネーム' %>
+  <%= f.text_field :name, class: 'form-control', required: true %>
+
+  <%= f.label :email, 'メールアドレス' %>
+  <%= f.email_field :email, class: 'form-control', required: true %>
+
+  <%= f.label :user_name, 'ユーザー名' %>
+  <%= f.text_field :user_name, class: 'form-control', required: true %>
+
+  <%= f.label :password, 'パスワード' %>
+  <%= f.password_field :password, class: 'form-control' %>
+
+  <%= f.label :password_confirmation, "パスワード（確認用）" %>
+  <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>
