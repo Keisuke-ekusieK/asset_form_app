@@ -1,0 +1,21 @@
+<section class="user_info">
+	<h1 style="margin-bottom: 20px;"><i class="fas fa-users"></i> 世帯構成</h1>
+  <table class="table">
+    <tbody>
+      <td>配偶者</td>
+      <td><%= @family.spouse ? "あり" : "なし" unless @family.nil? %></td>
+    </tbody>
+    <tbody>
+      <td>子供</td>
+      <td><%= @family.children unless @family.nil? %>人</td>
+    </tbody>
+    <tbody>
+      <td>親</td>
+      <td><%= @family.parent unless @family.nil? %>人</td>
+    </tbody>
+    <tbody>
+      <td>働き手</td>
+      <td><%= @family.worker unless @family.nil? %>人</td>
+    </tbody>
+  </table>
+</section>
