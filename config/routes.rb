@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'asset_allocations/new'
-  get 'asset_allocations/show'
-  get 'asset_allocations/edit'
   get 'sessions/new'
 	get  '/signup',  to: 'users#new'
 	root   'static_pages#home'
@@ -11,4 +8,5 @@ Rails.application.routes.draw do
 	delete '/logout',           to: 'sessions#destroy'
 	resources :users
 	resource  :family,           only: [:new, :create, :edit, :update, :show]
+	resource  :asset_allocation, only: [:new, :create, :edit, :update, :show]
 end
