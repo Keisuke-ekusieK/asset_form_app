@@ -22,10 +22,10 @@
   		</thead>
   		<tbody>
     		<tr>
-      		<td><%# user.family.spouse ? "あり" : "なし" unless user.family.nil? %></td>
-      		<td><%# user.family.children unless user.family.nil? %>人</td>
-      		<td><%# user.family.parent unless user.family.nil? %>人</td>
-      		<td><%# user.family.worker unless user.family.nil? %>人</td>
+      		<td><%= user.family.spouse ? "あり" : "なし" unless user.family.nil? %></td>
+      		<td><%= user.family.children unless user.family.nil? %>人</td>
+      		<td><%= user.family.parent unless user.family.nil? %>人</td>
+      		<td><%= user.family.worker unless user.family.nil? %>人</td>
     		</tr>
 			</tbody>
 		</table>

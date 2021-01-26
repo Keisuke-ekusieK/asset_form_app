@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		#@monthly_expense = current_user.monthly_expenses.build if logged_in?
-		#@family = @user.family
+		@family = @user.family
 		#@asset_allocation = @user.asset_allocation
 		#if not @asset_allocation.nil?
 		#	@asset_allocation_for_graph = {'国内通貨預金' => @asset_allocation.domestic_currency_deposits,
@@ -42,8 +42,7 @@ class UsersController < ApplicationController
 		if @user.save
 			log_in @user
 			flash[:success] = "アカウント情報を登録しました"
-			#redirect_to new_family_url 
-			redirect_to @user
+			redirect_to new_family_url 
 		else
 			render 'new'
 		end
