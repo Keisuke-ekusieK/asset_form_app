@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'families/new'
-  get 'families/edit'
-  get 'families/show'
   get 'sessions/new'
 	get  '/signup',  to: 'users#new'
 	root   'static_pages#home'
@@ -10,4 +7,5 @@ Rails.application.routes.draw do
 	post   '/login',            to: 'sessions#create'
 	delete '/logout',           to: 'sessions#destroy'
 	resources :users
+	resource  :family,           only: [:new, :create, :edit, :update, :show]
 end
