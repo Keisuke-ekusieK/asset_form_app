@@ -1,0 +1,33 @@
+
+<li class="row">
+	<div class="col-md-5">
+		<%= image_tag user.resize_avatar, class:"avatar" if user.avatar.attached? %>
+		<%= image_tag 'kitten.jpg', class:"avatar" if not user.avatar.attached? %>
+  	<%= link_to user.name, user %>
+		<% if current_user.admin? && !current_user?(user) %>
+    	| <%= link_to "削除", user, method: :delete,
+      	                            data: { confirm: "本当に削除しますか?" } %>
+  	<% end %>
+	</div>
+	<div class="col-md-6">
+		<h4><i class="fas fa-users"></i> 世帯構成</h4>
+		<table class="table">
+  		<thead>
+    		<tr>
+      		<th scope="col">配偶者</th>
+      		<th scope="col">子供</th>
+      		<th scope="col">親</th>
+      		<th scope="col">働き手</th>
+    		</tr>
+  		</thead>
+  		<tbody>
+    		<tr>
+      		<td><%# user.family.spouse ? "あり" : "なし" unless user.family.nil? %></td>
+      		<td><%# user.family.children unless user.family.nil? %>人</td>
+      		<td><%# user.family.parent unless user.family.nil? %>人</td>
+      		<td><%# user.family.worker unless user.family.nil? %>人</td>
+    		</tr>
+			</tbody>
+		</table>
+	</div>
+</li>
