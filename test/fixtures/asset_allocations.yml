@@ -1,27 +1,27 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  domestic_currency_deposits: 1
-  foreign_currency_deposits: 1
-  domestic_stocks: 1
-  foreign_stocks: 1
-  domestic_bonds: 1
-  foreign_bonds: 1
-  real_estate: 1
-  gold: 1
-  insurance: 1
-  others: 1
-  user: one
+  domestic_currency_deposits: 100
+  foreign_currency_deposits: 100
+  domestic_stocks: 100
+  foreign_stocks: 100
+  domestic_bonds: 100
+  foreign_bonds: 100
+  real_estate: 1000
+  gold: 50
+  insurance: 0
+  others: 500
+  user: michael
 
 two:
-  domestic_currency_deposits: 1
-  foreign_currency_deposits: 1
-  domestic_stocks: 1
-  foreign_stocks: 1
-  domestic_bonds: 1
-  foreign_bonds: 1
-  real_estate: 1
-  gold: 1
-  insurance: 1
-  others: 1
-  user: two
+  domestic_currency_deposits: 300
+  foreign_currency_deposits: 0
+  domestic_stocks: 500
+  foreign_stocks: 200
+  domestic_bonds: 100
+  foreign_bonds: 100
+  real_estate: 1000
+  gold: 100
+  insurance: 0
+  others: 1000
+  user: archer
