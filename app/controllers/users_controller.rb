@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+	def index
+		if params[:q]
+      @users = User.search_by_keyword(params[:q])
+                        .paginate(page: params[:page], per_page: 10)
+    else
+			@users = User.paginate(page: params[:page], per_page: 10)
+		end
+	end
 
 	def show
 		@user = User.find(params[:id])
