@@ -8,6 +8,7 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem "aws-sdk-s3", require: false
 gem 'active_storage_validations', '0.8.2'
 gem 'mini_magick', '4.9.5'
+gem 'image_processing',           '1.9.3'
 gem 'bcrypt',         '3.1.13'
 gem 'bootstrap-sass', '3.4.1'
 gem 'puma',       '4.3.6'
