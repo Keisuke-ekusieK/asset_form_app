@@ -1,0 +1,10 @@
+<section class="user_info">
+  <h1><i class="fas fa-coins"></i> 資産ポートフォリオ</h1>
+	<h4><i class="fas fa-yen-sign"></i> 資産総額：<%= @asset_allocation.sum.to_s(:delimited) if not @asset_allocation.nil? %> 万円</h4>
+  <%= pie_chart @asset_allocation_for_graph, suffix: "万円", 
+                                             label: "Value",
+                                             thousands: ",", 
+                                             donut: true, 
+                                             legend: "left" if not @asset_allocation.nil? %>
+  <%= "まだ登録されていません" if @asset_allocation.nil? %>
+</section>
