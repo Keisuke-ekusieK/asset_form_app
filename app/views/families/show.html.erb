@@ -1,2 +1,23 @@
-<h1>Families#show</h1>
-<p>Find me in app/views/families/show.html.erb</p>
+<% provide(:title, "世帯情報の入力") %>
+<% provide(:button_text, '世帯情報の登録') %>
+<h1>世帯情報の入力</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 d-flex">
+    <%= form_with(model: @family, url: family_path, local: true) do |f| %>
+      <%= f.label :spouse, '配偶者の有無' %>
+      <%= f.check_box :spouse, class: 'form-control' %>
+
+      <%= f.label :children, '子供の人数' %>
+      <%= f.number_field :children, value: 0, in: 0..10, class: 'form-control' %>
+
+      <%= f.label :parent, '同居している親の人数' %>
+      <%= f.number_field :parent, value: 0, in: 0..6 , class: 'form-control' %>
+
+      <%= f.label :worker, '世帯内で働いている人数' %>
+      <%= f.number_field :worker, value: 0, in: 0..8 , class: 'form-control' %>
+
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
