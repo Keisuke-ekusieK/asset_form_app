@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',      '6.0.3'
+gem 'faker',                   '2.1.2'
+gem 'will_paginate',           '3.1.8'
+gem 'bootstrap-will_paginate', '1.0.0'
 gem "aws-sdk-s3", require: false
 gem 'active_storage_validations', '0.8.2'
 gem 'mini_magick', '4.9.5'
