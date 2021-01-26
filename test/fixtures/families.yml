@@ -1,15 +1,22 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  spouse: false
-  children: 1
-  parent: 1
-  worker: 1
-  user: one
+michael:
+  spouse: true
+  children: 3
+  parent: 2
+  worker: 2
+  user: michael
 
-two:
+archer:
   spouse: false
-  children: 1
-  parent: 1
+  children: 2
+  parent: 2
+  worker: 3
+  user: archer
+
+lana:
+  spouse: false
+  children: 0
+  parent: 0
   worker: 1
-  user: two
+  user: lana
