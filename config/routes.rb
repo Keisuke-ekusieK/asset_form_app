@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'families/new'
+  get 'families/edit'
+  get 'families/show'
   get 'sessions/new'
 	get  '/signup',  to: 'users#new'
 	root   'static_pages#home'
