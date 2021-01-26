@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'asset_allocations/new'
+  get 'asset_allocations/show'
+  get 'asset_allocations/edit'
   get 'sessions/new'
 	get  '/signup',  to: 'users#new'
 	root   'static_pages#home'
