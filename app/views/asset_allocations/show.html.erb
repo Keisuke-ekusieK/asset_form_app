@@ -1,2 +1,42 @@
-<h1>AssetAllocations#show</h1>
-<p>Find me in app/views/asset_allocations/show.html.erb</p>
+<% provide(:title, "資産配分の入力") %>
+<% provide(:button_text, '資産配分の登録') %>
+<h1>世帯情報の入力</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 d-flex">
+    <%= form_with(model: @asset_allocation, url: asset_allocation_path, local: true) do |f| %>
+
+      <%= f.label :domestic_currency_deposits, '国内通貨預金 (単位：万円)' %>
+      <%= f.number_field :domestic_currency_deposits, in: 0..10000, class: 'form-control' %>
+
+      <%= f.label :foreign_currency_deposits, '海外通貨預金 (単位：万円)' %>
+      <%= f.number_field :foreign_currency_deposits, in: 0..10000, class: 'form-control' %>
+
+      <%= f.label :domestic_stocks, '国内株式 (単位：万円)' %>
+      <%= f.number_field :domestic_stocks, in: 0..10000, class: 'form-control' %>
+
+      <%= f.label :foreign_stocks, '海外株式 (単位：万円)' %>
+      <%= f.number_field :foreign_stocks, in: 0..10000, class: 'form-control' %>
+
+      <%= f.label :domestic_bonds, '国内債券 (単位：万円)' %>
+      <%= f.number_field :domestic_bonds, in: 0..10000, class: 'form-control' %>
+
+      <%= f.label :foreign_bonds, '海外債券 (単位：万円)' %>
+      <%= f.number_field :foreign_bonds, in: 0..10000, class: 'form-control' %>
+
+      <%= f.label :real_estate, '不動産 (単位：万円)' %>
+      <%= f.number_field :real_estate, in: 0..10000, class: 'form-control' %>
+
+      <%= f.label :gold, '金 (単位：万円)' %>
+      <%= f.number_field :gold, in: 0..10000, class: 'form-control' %>
+
+      <%= f.label :insurance, '保険 (単位：万円)' %>
+      <%= f.number_field :insurance, in: 0..10000, class: 'form-control' %>
+
+      <%= f.label :others, 'その他 (単位：万円)' %>
+      <%= f.number_field :others, in: 0..10000, class: 'form-control' %>
+
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
