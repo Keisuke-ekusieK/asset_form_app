@@ -1,35 +1,50 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  year: 1
-  month: 1
-  house: 1
-  food: 1
-  clothes: 1
-  education: 1
-  daily_necessities: 1
-  car: 1
-  medical_treatment: 1
-  entertainment: 1
-  communication: 1
-  social: 1
-  insurance: 1
-  comment: MyText
-  user: one
+  year: 2020 
+  month: 12
+  house: 50000
+  food: 30000
+  clothes: 3000
+  education: 8000
+  daily_necessities: 3000
+  car: 8000
+  medical_treatment: 5000
+  entertainment: 10000
+  communication: 5000
+  social: 20000
+  insurance: 5000
+  comment: Mytext
+  user: michael
 
 two:
-  year: 1
+  year: 2021
   month: 1
-  house: 1
-  food: 1
-  clothes: 1
-  education: 1
-  daily_necessities: 1
-  car: 1
-  medical_treatment: 1
-  entertainment: 1
-  communication: 1
-  social: 1
-  insurance: 1
-  comment: MyText
-  user: two
+  house: 60000
+  food: 40000
+  clothes: 3000
+  education: 3000
+  daily_necessities: 2000
+  car: 0
+  medical_treatment: 5000
+  entertainment: 5000
+  communication: 3000
+  social: 30000
+  insurance: 0
+  comment: michael
+
+three:
+  year: 2021
+  month: 1
+  house: 60000
+  food: 40000
+  clothes: 3000
+  education: 3000
+  daily_necessities: 2000
+  car: 0
+  medical_treatment: 5000
+  entertainment: 5000
+  communication: 3000
+  social: 30000
+  insurance: 0
+  comment: archer
