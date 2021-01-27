@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 2021_01_27_103157) do
     t.integer "monthly_expense_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"user_id\", \"micropost_id\"", name: "index_likes_on_user_id_and_micropost_id", unique: true
     t.index ["monthly_expense_id"], name: "index_likes_on_monthly_expense_id"
+    t.index ["user_id", "monthly_expense_id"], name: "index_likes_on_user_id_and_monthly_expense_id", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
