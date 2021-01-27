@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 	resources :users
 	resource  :family,           only: [:new, :create, :edit, :update, :show]
 	resource  :asset_allocation, only: [:new, :create, :edit, :update, :show]
+	resources :monthly_expenses, only: [:create, :destroy]
 end

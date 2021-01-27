@@ -3,18 +3,18 @@
   <aside class="col-md-4">
 		<%= render 'users/user_main' %>
 		<%# render 'users/follow_form' if logged_in? %>
-		<%# render 'monthly_expenses/monthly_expense_form' %>
+		<%= render 'monthly_expenses/monthly_expense_form' %>
 		<%= render 'families/family_show' %>
 		<%= render 'asset_allocations/asset_allocation_show' %>
   </aside>
 
 	<div class="col-md-8">
-    <h3>月の支出 (登録件数：<%# @user.monthly_expenses.count %>)</h3>
-    <%# if @user.monthly_expenses.any? %>
+    <h3>月の支出 (登録件数：<%= @user.monthly_expenses.count %>)</h3>
+    <% if @user.monthly_expenses.any? %>
       <ol class="monthly_expenses">
-        <%# render @monthly_expenses %>
+        <%= render @monthly_expenses %>
       </ol>
-      <%# will_paginate @monthly_expenses %>
-    <%# end %>
+      <%= will_paginate @monthly_expenses %>
+    <% end %>
   </div>
 </div>

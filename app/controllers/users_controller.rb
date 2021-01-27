@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		#@monthly_expense = current_user.monthly_expenses.build if logged_in?
+		@monthly_expense = current_user.monthly_expenses.build if logged_in?
 		@family = @user.family
 		@asset_allocation = @user.asset_allocation
 		if not @asset_allocation.nil?
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 																	 '保険'       => @asset_allocation.insurance,
 																	 'その他'     => @asset_allocation.others}
 		end
-		#@monthly_expenses = @user.monthly_expenses.paginate(page: params[:page], per_page: 10)
+		@monthly_expenses = @user.monthly_expenses.paginate(page: params[:page], per_page: 10)
 	end
 
   def new
