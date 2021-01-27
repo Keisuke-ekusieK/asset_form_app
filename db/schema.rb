@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_232745) do
+ActiveRecord::Schema.define(version: 2021_01_27_031745) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -62,6 +62,27 @@ ActiveRecord::Schema.define(version: 2021_01_26_232745) do
     t.index ["user_id"], name: "index_families_on_user_id"
   end
 
+  create_table "monthly_expenses", force: :cascade do |t|
+    t.integer "year"
+    t.integer "month"
+    t.integer "house"
+    t.integer "food"
+    t.integer "clothes"
+    t.integer "education"
+    t.integer "daily_necessities"
+    t.integer "car"
+    t.integer "medical_treatment"
+    t.integer "entertainment"
+    t.integer "communication"
+    t.integer "social"
+    t.integer "insurance"
+    t.text "comment"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_monthly_expenses_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -77,4 +98,5 @@ ActiveRecord::Schema.define(version: 2021_01_26_232745) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "asset_allocations", "users"
   add_foreign_key "families", "users"
+  add_foreign_key "monthly_expenses", "users"
 end
