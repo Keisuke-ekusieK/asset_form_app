@@ -68,4 +68,9 @@ class MonthlyExpense < ApplicationRecord
   def not_good(user)
     likes.find_by(user_id: user.id).destroy
   end
+
+	# 現在のユーザーがいいねしてたらtrueを返す
+  def good?(user)
+    good_users.include?(user)
+  end
 end
