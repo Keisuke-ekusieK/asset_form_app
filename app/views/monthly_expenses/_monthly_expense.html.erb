@@ -29,6 +29,7 @@
 				<%= monthly_expense.sum.to_s(:delimited) %> 円
 				<h4 style="margin-top: 20px;"><i class="far fa-hand-point-up"></i> 今月のワンポイント</h4>
 				<%= monthly_expense.comment %>
+				<%= render "likes/like", monthly_expense: monthly_expense %>
 			</div>
 		</div>
 </li>
