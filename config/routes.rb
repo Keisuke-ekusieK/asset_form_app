@@ -15,4 +15,5 @@ Rails.application.routes.draw do
 	resource  :asset_allocation, only: [:new, :create, :edit, :update, :show]
 	resources :monthly_expenses, only: [:create, :destroy]
 	resources :relationships,    only: [:create, :destroy]
+	resources :likes, only: [:create, :destroy]
 end
