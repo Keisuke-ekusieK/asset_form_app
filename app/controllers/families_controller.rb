@@ -15,11 +15,11 @@ class FamiliesController < ApplicationController
 		@family = current_user.build_family(family_params)
 		if @family.save
 			flash[:success] = "世帯構成を登録しました"
-			#if current_user.asset_allocation.nil?
-			#	redirect_to new_asset_allocation_url 
-			#else
-			redirect_to current_user
-			#end
+			if current_user.asset_allocation.nil?
+				redirect_to new_asset_allocation_url 
+			else
+				redirect_to current_user
+			end
 		else
 			render 'new'
 		end
