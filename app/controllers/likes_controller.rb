@@ -1,13 +1,25 @@
 class LikesController < ApplicationController
 	before_action :logged_in_user
 
-  def create
+	def create
     @monthly_expense = MonthlyExpense.find(params[:monthly_expense_id])
-    @monthly_expense.good(current_user)
+    unless @monthly_expense.good?(current_user)
+      @monghly_expense.good(current_user)
+      respond_to do |format|
+        format.html { redirect_to request.referrer || root_url }
+        format.js
+      end
+    end
   end
 
   def destroy
     @monthly_expense = Like.find(params[:id]).monthly_expense
-    @monthly_expense.not_good(current_user)
+    if @monthly_expense.good?(current_user)
+      @monthly_expense.not_good(current_user)
+      respond_to do |format|
+        format.html { redirect_to request.referrer || root_url }
+        format.js
+      end
+    end
   end
 end
