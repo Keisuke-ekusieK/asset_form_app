@@ -69,6 +69,48 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+	def following
+    @title = "フォローリスト"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page], per_page: 10)
+    @family = @user.family
+    @asset_allocation = @user.asset_allocation
+    if not @asset_allocation.nil?
+      @asset_allocation_for_graph = {'国内通貨預金' => @asset_allocation.domestic_currency_deposits,
+                                   '海外通貨預金' => @asset_allocation.foreign_currency_deposits,
+                                   '国内株式'     => @asset_allocation.domestic_stocks,
+                                   '海外株式'    => @asset_allocation.foreign_stocks,
+                                   '国内債券'    => @asset_allocation.domestic_bonds,
+                                   '海外債券'    => @asset_allocation.foreign_bonds,
+                                   '不動産'      => @asset_allocation.real_estate,
+                                   '金'         => @asset_allocation.gold,
+                                   '保険'       => @asset_allocation.insurance,
+                                   'その他'     => @asset_allocation.others}
+    end
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "フォロワーリスト"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page], per_page: 10)
+		@family = @user.family
+    @asset_allocation = @user.asset_allocation
+    if not @asset_allocation.nil?
+      @asset_allocation_for_graph = {'国内通貨預金' => @asset_allocation.domestic_currency_deposits,
+                                   '海外通貨預金' => @asset_allocation.foreign_currency_deposits,
+                                   '国内株式'     => @asset_allocation.domestic_stocks,
+                                   '海外株式'    => @asset_allocation.foreign_stocks,
+                                   '国内債券'    => @asset_allocation.domestic_bonds,
+                                   '海外債券'    => @asset_allocation.foreign_bonds,
+                                   '不動産'      => @asset_allocation.real_estate,
+                                   '金'         => @asset_allocation.gold,
+                                   '保険'       => @asset_allocation.insurance,
+                                   'その他'     => @asset_allocation.others}
+    end
+    render 'show_follow'
+  end
+
 		private
 			def user_params
       	params.require(:user).permit(:avatar, 
