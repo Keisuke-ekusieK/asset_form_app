@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 	has_one  :family,           dependent: :destroy
 	has_one  :asset_allocation, dependent: :destroy
+	has_many :monthly_expenses, dependent: :destroy
 
 	scope :search_by_keyword, -> (keyword) {
     where("users.name LIKE :keyword", keyword: "%#{sanitize_sql_like(keyword)}%") if keyword.present?
