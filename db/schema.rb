@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_27_081409) do
+ActiveRecord::Schema.define(version: 2021_01_27_095454) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(version: 2021_01_27_081409) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["spouse", "children", "parent", "worker"], name: "index_families_on_spouse_and_children_and_parent_and_worker"
     t.index ["user_id"], name: "index_families_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "monthly_expense_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index "\"user_id\", \"micropost_id\"", name: "index_likes_on_user_id_and_micropost_id", unique: true
+    t.index ["monthly_expense_id"], name: "index_likes_on_monthly_expense_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "monthly_expenses", force: :cascade do |t|
