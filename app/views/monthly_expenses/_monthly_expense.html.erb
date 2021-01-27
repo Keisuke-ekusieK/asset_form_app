@@ -1,0 +1,34 @@
+<li>
+		<h4>
+  		<%= image_tag monthly_expense.user.resize_avatar, class: "avatar" if monthly_expense.user.avatar.attached? %>
+    	<%= image_tag "kitten.jpg", class: "avatar" if not monthly_expense.user.avatar.attached? %>
+    	<%= link_to monthly_expense.user.name %>
+			<span class="text-color-<%= monthly_expense.month %>">
+				<%= " / #{monthly_expense.year}年 #{monthly_expense.month}月" %>
+			</span>
+			<%= link_to "[削除]", monthly_expense, method: :delete, data: { confirm: "本当に削除しますか？" } if current_user?(monthly_expense.user) %>
+  	</h4>
+
+		<div class="row">
+			<div class="col-md-8">
+				<% for_graph = { '住居関連費' => monthly_expense.house, 
+												 '通信費' => monthly_expense.communication,
+												 '食費' => monthly_expense.food, 
+												 '衣服代' => monthly_expense.clothes,
+												 '日用品費' => monthly_expense.daily_necessities,
+	 									 		 '自動車関連費' => monthly_expense.car,  
+	 									 		 '医療費' => monthly_expense.medical_treatment,  
+										 		 '教育費' => monthly_expense.education,  
+										 		 '遊興費' => monthly_expense.entertainment, 
+										 		 '交際費' => monthly_expense.social,
+										 		 '保険代' => monthly_expense.insurance} %>	
+				<%= pie_chart for_graph, suffix: "円", thousands: ",", legend: "left" %>
+			</div>
+			<div class="col-md-4">
+				<h4><i class="fas fa-yen-sign"></i> 支出総額</h4>
+				<%= monthly_expense.sum.to_s(:delimited) %> 円
+				<h4 style="margin-top: 20px;"><i class="far fa-hand-point-up"></i> 今月のワンポイント</h4>
+				<%= monthly_expense.comment %>
+			</div>
+		</div>
+</li>
