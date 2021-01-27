@@ -1,5 +1,6 @@
 class MonthlyExpense < ApplicationRecord
   belongs_to :user
+	has_many :likes, dependent: :destroy
 
 	default_scope -> { order(year: :desc).order(month: :desc).order(created_at: :desc) }
 	scope :search_by_keyword, -> (keyword) {
