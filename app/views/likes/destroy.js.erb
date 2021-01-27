@@ -1,1 +1,1 @@
-$("#monthly_expense-<%= @monthly_expense.id %> .like").html("<%= escape_javascript(render "likes/like", monthly_expense: @monthly_expense) %>");
+$("#like-<%= @monthly_expense.id %>").html("<%= escape_javascript(render "likes/good", monthly_expense: @monthly_expense) %>");

@@ -25,11 +25,11 @@
 				<%= pie_chart for_graph, suffix: "円", thousands: ",", legend: "left" %>
 			</div>
 			<div class="col-md-4">
+				<%= render "likes/like", monthly_expense: monthly_expense %>
 				<h4><i class="fas fa-yen-sign"></i> 支出総額</h4>
 				<%= monthly_expense.sum.to_s(:delimited) %> 円
 				<h4 style="margin-top: 20px;"><i class="far fa-hand-point-up"></i> 今月のワンポイント</h4>
 				<%= monthly_expense.comment %>
-				<%= render "likes/like", monthly_expense: monthly_expense %>
 			</div>
 		</div>
 </li>
