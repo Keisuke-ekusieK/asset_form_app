@@ -1,0 +1,6 @@
+<% if @monthly_expenses.any? %>
+  <ol>
+    <%= render @monthly_expenses %>
+  </ol>
+  <%= will_paginate @monthly_expenses %>
+<% end %>
