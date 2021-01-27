@@ -58,4 +58,14 @@ class MonthlyExpense < ApplicationRecord
 	def already_registered?
 		!MonthlyExpense.find_by(year: self.year, month: self.month, user_id: self.user.id).nil?
 	end
+
+	# いいねする
+  def good(user)
+    likes.create(user_id: user.id)
+  end
+
+  # いいねを解除する
+  def not_good(user)
+    likes.find_by(user_id: user.id).destroy
+  end
 end
