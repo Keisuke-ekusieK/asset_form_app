@@ -15,8 +15,8 @@
               <li><%= link_to "アカウント情報の編集", edit_user_path(current_user) %></li>
               <li><%= link_to "世帯情報の登録", family_path if current_user.family.nil? %></li>
               <li><%= link_to "世帯情報の編集", edit_family_path if not current_user.family.nil? %></li>
-              <li><%# link_to "資産配分の登録", asset_allocation_path if current_user.asset_allocation.nil? %></li>
-              <li><%# link_to "資産配分の編集", edit_asset_allocation_path if not current_user.asset_allocation.nil? %></li>
+              <li><%= link_to "資産配分の登録", asset_allocation_path if current_user.asset_allocation.nil? %></li>
+              <li><%= link_to "資産配分の編集", edit_asset_allocation_path if not current_user.asset_allocation.nil? %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to "ログアウト", logout_path, method: :delete %>
