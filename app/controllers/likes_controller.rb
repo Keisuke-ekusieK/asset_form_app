@@ -4,7 +4,8 @@ class LikesController < ApplicationController
 	def create
     @monthly_expense = MonthlyExpense.find(params[:monthly_expense_id])
     unless @monthly_expense.good?(current_user)
-      @monghly_expense.good(current_user)
+      @monthly_expense.good(current_user)
+			@monthly_expense.reload
       respond_to do |format|
         format.html { redirect_to request.referrer || root_url }
         format.js
@@ -16,6 +17,7 @@ class LikesController < ApplicationController
     @monthly_expense = Like.find(params[:id]).monthly_expense
     if @monthly_expense.good?(current_user)
       @monthly_expense.not_good(current_user)
+			@monthly_expense.reload
       respond_to do |format|
         format.html { redirect_to request.referrer || root_url }
         format.js
