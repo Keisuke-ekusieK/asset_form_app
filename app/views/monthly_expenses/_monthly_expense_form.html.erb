@@ -1,0 +1,106 @@
+<% if current_user?(@user) %>
+  <section>
+	  <p class="mx-auto">
+  	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    	  月の支出 +
+      </button>
+    </p>
+    <div class="collapse input-form" id="collapseExample">
+      <div class="card card-body">
+        <%= form_with(model: @monthly_expense, local: true) do |f| %>
+
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.label :year, '年' %>
+              <%= f.number_field :year, in: 2010..2030, class: 'form-control', required: true %>
+            </div>
+
+            <div class="col-md-6">
+              <%= f.label :month, '月' %>
+              <%= f.number_field :month, in: 1..12, class: 'form-control', required: true %>
+            </div>
+          </div>
+
+					<hr>
+
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.label :house, '住居関連費用' %>
+              <%= f.number_field :house, class: 'form-control', required: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.label :food, '食費' %>
+              <%= f.number_field :food, class: 'form-control', required: true %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.label :clothes, '衣服費' %>
+              <%= f.number_field :clothes, class: 'form-control', required: true %>
+            </div>
+
+            <div class="col-md-6">
+              <%= f.label :education, '教育費' %>
+              <%= f.number_field :education, class: 'form-control', required: true %>
+            </div>
+          </div>
+
+					<div class="row">
+            <div class="col-md-6">
+              <%= f.label :daily_necessities, '日用品費' %>
+              <%= f.number_field :daily_necessities, class: 'form-control', required: true %>
+            </div>
+
+            <div class="col-md-6">
+              <%= f.label :car, '自動車関連費' %>
+              <%= f.number_field :car, class: 'form-control', required: true %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.label :medical_treatment, '医療費' %>
+              <%= f.number_field :medical_treatment, class: 'form-control', required: true %>
+            </div>
+
+            <div class="col-md-6">
+              <%= f.label :entertainment, '娯楽費' %>
+              <%= f.number_field :entertainment, class: 'form-control', required: true %>
+            </div>
+          </div>
+
+					<div class="row">
+            <div class="col-md-6">
+              <%= f.label :communication, '通信費' %>
+              <%= f.number_field :communication, class: 'form-control', required: true %>
+            </div>
+
+            <div class="col-md-6">
+              <%= f.label :social, '交際費' %>
+              <%= f.number_field :social, class: 'form-control', required: true %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.label :insurance, '保険代' %>
+              <%= f.number_field :insurance, class: 'form-control', required: true %>
+            </div>
+          </div>
+
+          <hr>
+
+					<div class="row mb-5 pb-5">
+            <div class="col-md-12">
+              <%= f.label :comment, '家計のワンポイント' %>
+              <%= f.text_area :comment, { placeholder: "今月の家計のワンポイント", maxlength: "200", class: 'form-control'} %>
+            </div>
+          </div>
+
+          <%= f.submit "月の支出を投稿", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+<% end %>
