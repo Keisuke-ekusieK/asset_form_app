@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 	resource  :family,           only: [:new, :create, :edit, :update, :show]
 	resource  :asset_allocation, only: [:new, :create, :edit, :update, :show]
 	resources :monthly_expenses, only: [:create, :destroy]
+	resources :relationships,    only: [:create, :destroy]
 end
