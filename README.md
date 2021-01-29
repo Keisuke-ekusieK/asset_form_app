@@ -1,8 +1,8 @@
 # README
 
 ## 1. アプリの概要
-本アプリの趣旨はログインユーザー同士で月々の支出や保有資産のポートフォリオを共有して資産形成のヒントにしようというものです。  
-<img src="https://user-images.githubusercontent.com/68892662/106268949-282f1c00-626f-11eb-8d24-06ef1f5be366.png" width="400px">
+ユーザー同士で月々の支出や保有資産のポートフォリオを共有して、お互いの資産形成のヒントにするアプリです。  
+<img src="https://user-images.githubusercontent.com/68892662/106268949-282f1c00-626f-11eb-8d24-06ef1f5be366.png" width="500px">
 
 https://asset-formation-app.com  
 メールアドレス：user@example.com  
