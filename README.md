@@ -1,9 +1,10 @@
 # README
 
 ## 1. アプリの概要
-本アプリの趣旨はログインユーザー同士で月々の支出や保有資産のポートフォリオを共有して資産形成のヒントにしようというものです。
-https://asset-formation-app.com/users/6/followers
-メールアドレス：user@example.com
+本アプリの趣旨はログインユーザー同士で月々の支出や保有資産のポートフォリオを共有して資産形成のヒントにしようというものです。  
+
+https://asset-formation-app.com/users/6/followers  
+メールアドレス：user@example.com  
 パスワード：password
 
 ## 2. アプリケーションの機能一覧
@@ -20,8 +21,8 @@ https://asset-formation-app.com/users/6/followers
 11. 管理者によるユーザー削除機能
 
 ## 3. インフラ
-本番環境：AWS（EC2, RDS, S3, 強制SSL）
-サーバー：Nginx + Puma
+本番環境：AWS（EC2, RDS, S3, 強制SSL）  
+サーバー：Nginx + Puma  
 DB：PostgreSQL
 
 ## 4. 使用技術
