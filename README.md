@@ -1,10 +1,10 @@
 # README
 
 ## 1. アプリの概要
-ユーザー同士で月々の支出や保有資産のポートフォリオを共有して、お互いの資産形成のヒントにするアプリです。  
+ユーザー間で月々の支出や保有資産ポートフォリオを共有し、お互いの資産形成のヒントにするアプリです。  
 <img src="https://user-images.githubusercontent.com/68892662/106268949-282f1c00-626f-11eb-8d24-06ef1f5be366.png" width="500px">
 
-https://asset-formation-app.com  
+https://portfolio.asset-formation-app.com  
 メールアドレス：user@example.com  
 パスワード：password
 
@@ -23,13 +23,13 @@ https://asset-formation-app.com
 12. フレンドリーフォワーディング機能
 
 ## 3. インフラ
-本番環境：AWS（EC2, RDS, S3, 強制SSL）  
+本番環境：AWS（EC2, RDS, S3, ELB, ACM, Route53）  
 サーバー：Nginx + Puma  
 DB：PostgreSQL
 
 ## 4. 使用技術
-1. グラフ描画にchartkick gem利用
-2. フォロー/アンフォロー・いいねはAjaxを利用した非同期処理
+1. グラフ描画にchartkick gem
+2. Ajaxを利用した非同期処理(フォロー/アンフォロー・いいね)
 3. BootstrapのプルダウンメニューとCollapseによる表示切替
-4. Fontawesome
+4. fontawesome
 ---
